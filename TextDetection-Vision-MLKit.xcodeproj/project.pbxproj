@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3D471D520A4D959002567DB /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = D3D471D420A4D959002567DB /* Cartfile */; };
+		348EB7256AC2B29FD058AF39 /* Pods_TextDetection_Vision_MLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6425309115497D311A920F /* Pods_TextDetection_Vision_MLKit.framework */; };
 		D3D471FD20A4D969002567DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D471D920A4D969002567DB /* LaunchScreen.storyboard */; };
 		D3D471FE20A4D969002567DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D471DB20A4D969002567DB /* Main.storyboard */; };
 		D3D471FF20A4D969002567DB /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471DD20A4D969002567DB /* Storyboard.swift */; };
@@ -24,11 +24,15 @@
 		D3D4721020A4D969002567DB /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471F720A4D969002567DB /* Appearance.swift */; };
 		D3D4721120A4D969002567DB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3D471F920A4D969002567DB /* Info.plist */; };
 		D3D4721220A4D969002567DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D471FB20A4D969002567DB /* Assets.xcassets */; };
+		D3D89C9320A4FCB60011F7F3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D3D89C9220A4FCB60011F7F3 /* Podfile */; };
+		D3D89C9520A4FE610011F7F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3D89C9420A4FE610011F7F3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D4898EA7B613924C1FCAE1A /* Pods-TextDetection-Vision-MLKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextDetection-Vision-MLKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit.release.xcconfig"; sourceTree = "<group>"; };
+		6F47D951F99E155FEF8AEF49 /* Pods-TextDetection-Vision-MLKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextDetection-Vision-MLKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit.debug.xcconfig"; sourceTree = "<group>"; };
+		CE6425309115497D311A920F /* Pods_TextDetection_Vision_MLKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextDetection_Vision_MLKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D471BF20A4D8AE002567DB /* TextDetection-Vision-MLKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TextDetection-Vision-MLKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3D471D420A4D959002567DB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		D3D471DA20A4D969002567DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3D471DC20A4D969002567DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3D471DD20A4D969002567DB /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		D3D471F720A4D969002567DB /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		D3D471F920A4D969002567DB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D471FB20A4D969002567DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3D89C9220A4FCB60011F7F3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D3D89C9420A4FE610011F7F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,18 +58,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348EB7256AC2B29FD058AF39 /* Pods_TextDetection_Vision_MLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FD68728404DD636E63F6D1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE6425309115497D311A920F /* Pods_TextDetection_Vision_MLKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD88D21B0BADFF5DF464D657 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F47D951F99E155FEF8AEF49 /* Pods-TextDetection-Vision-MLKit.debug.xcconfig */,
+				6D4898EA7B613924C1FCAE1A /* Pods-TextDetection-Vision-MLKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D3D471B620A4D8AE002567DB = {
 			isa = PBXGroup;
 			children = (
-				D3D471D420A4D959002567DB /* Cartfile */,
 				D3D471C120A4D8AE002567DB /* TextDetection-Vision-MLKit */,
 				D3D471C020A4D8AE002567DB /* Products */,
+				CD88D21B0BADFF5DF464D657 /* Pods */,
+				3FD68728404DD636E63F6D1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +103,7 @@
 		D3D471C120A4D8AE002567DB /* TextDetection-Vision-MLKit */ = {
 			isa = PBXGroup;
 			children = (
+				D3D89C9220A4FCB60011F7F3 /* Podfile */,
 				D3D471FA20A4D969002567DB /* Assets */,
 				D3D471D620A4D969002567DB /* Code */,
 				D3D471F820A4D969002567DB /* SupportingFiles */,
@@ -181,6 +207,7 @@
 		D3D471F820A4D969002567DB /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				D3D89C9420A4FE610011F7F3 /* GoogleService-Info.plist */,
 				D3D471F920A4D969002567DB /* Info.plist */,
 			);
 			path = SupportingFiles;
@@ -201,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3D471D120A4D8AF002567DB /* Build configuration list for PBXNativeTarget "TextDetection-Vision-MLKit" */;
 			buildPhases = (
+				51B4A423C630850E9CB50349 /* [CP] Check Pods Manifest.lock */,
 				D3D471BB20A4D8AE002567DB /* Sources */,
 				D3D471BC20A4D8AE002567DB /* Frameworks */,
 				D3D471BD20A4D8AE002567DB /* Resources */,
+				BCAE9D75FAFD2B8820C7ACB3 /* [CP] Embed Pods Frameworks */,
+				03D901F001D01F280DB79A4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,17 +284,93 @@
 			files = (
 				D3D4720F20A4D969002567DB /* .gitkeep in Resources */,
 				D3D4720920A4D969002567DB /* .gitkeep in Resources */,
-				D3D471D520A4D959002567DB /* Cartfile in Resources */,
 				D3D4721220A4D969002567DB /* Assets.xcassets in Resources */,
 				D3D471FE20A4D969002567DB /* Main.storyboard in Resources */,
 				D3D471FD20A4D969002567DB /* LaunchScreen.storyboard in Resources */,
 				D3D4721120A4D969002567DB /* Info.plist in Resources */,
+				D3D89C9320A4FCB60011F7F3 /* Podfile in Resources */,
 				D3D4720E20A4D969002567DB /* .gitkeep in Resources */,
 				D3D4720020A4D969002567DB /* .gitkeep in Resources */,
+				D3D89C9520A4FE610011F7F3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03D901F001D01F280DB79A4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51B4A423C630850E9CB50349 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TextDetection-Vision-MLKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCAE9D75FAFD2B8820C7ACB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Diff/Diff.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MBDataSource/MBDataSource.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Diff.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBDataSource.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3D471BB20A4D8AE002567DB /* Sources */ = {
@@ -420,6 +526,7 @@
 		};
 		D3D471D220A4D8AF002567DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F47D951F99E155FEF8AEF49 /* Pods-TextDetection-Vision-MLKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -438,6 +545,7 @@
 		};
 		D3D471D320A4D8AF002567DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D4898EA7B613924C1FCAE1A /* Pods-TextDetection-Vision-MLKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

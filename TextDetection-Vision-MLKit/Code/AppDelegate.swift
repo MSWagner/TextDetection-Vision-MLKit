@@ -1,6 +1,7 @@
 import ReactiveSwift
 import Result
 import UIKit
+import Firebase
 
 struct Foo: Decodable {
     let foo: String
@@ -13,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Appearance.setup()
 
+        FirebaseApp.configure()
+        
         return true
     }
 
