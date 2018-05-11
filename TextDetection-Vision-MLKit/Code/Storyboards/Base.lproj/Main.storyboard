@@ -1,27 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Video View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
+                <viewController storyboardIdentifier="VideoViewController" id="BYZ-38-t0r" customClass="VideoViewController" customModule="TextDetection_Vision_MLKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R3k-wu-KEW" userLabel="imageView">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwt-uH-cro">
+                                <rect key="frame" x="16" y="25" width="46.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="T7f-Fd-eLp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MLKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H06-Pq-BfL">
+                                <rect key="frame" x="299.5" y="25" width="44.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="3y9-kO-zvQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="R3k-wu-KEW" firstAttribute="top" secondItem="H06-Pq-BfL" secondAttribute="bottom" id="8IZ-Oo-qp7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H06-Pq-BfL" secondAttribute="trailing" constant="15" id="9bL-e7-m0f"/>
+                            <constraint firstItem="gwt-uH-cro" firstAttribute="top" secondItem="TkD-nq-aA3" secondAttribute="top" constant="5" id="Id9-zR-hzP"/>
+                            <constraint firstItem="TkD-nq-aA3" firstAttribute="trailing" secondItem="R3k-wu-KEW" secondAttribute="trailing" id="dXU-4X-rvX"/>
+                            <constraint firstItem="H06-Pq-BfL" firstAttribute="top" secondItem="TkD-nq-aA3" secondAttribute="top" constant="5" id="emo-Oc-Olo"/>
+                            <constraint firstItem="gwt-uH-cro" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gTa-aw-c59"/>
+                            <constraint firstItem="R3k-wu-KEW" firstAttribute="leading" secondItem="TkD-nq-aA3" secondAttribute="leading" id="pCN-Yn-wds"/>
+                            <constraint firstItem="TkD-nq-aA3" firstAttribute="bottom" secondItem="R3k-wu-KEW" secondAttribute="bottom" id="wSe-Md-SG6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TkD-nq-aA3"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="R3k-wu-KEW" id="DEw-ju-TnZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,7 +17,6 @@
 		D3D4720920A4D969002567DB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D3D471EC20A4D969002567DB /* .gitkeep */; };
 		D3D4720A20A4D969002567DB /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471EE20A4D969002567DB /* Decoders.swift */; };
 		D3D4720B20A4D969002567DB /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471EF20A4D969002567DB /* Formatters.swift */; };
-		D3D4720C20A4D969002567DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471F120A4D969002567DB /* ViewController.swift */; };
 		D3D4720D20A4D969002567DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471F220A4D969002567DB /* AppDelegate.swift */; };
 		D3D4720E20A4D969002567DB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D3D471F420A4D969002567DB /* .gitkeep */; };
 		D3D4720F20A4D969002567DB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D3D471F620A4D969002567DB /* .gitkeep */; };
@@ -26,6 +25,7 @@
 		D3D4721220A4D969002567DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D471FB20A4D969002567DB /* Assets.xcassets */; };
 		D3D89C9320A4FCB60011F7F3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D3D89C9220A4FCB60011F7F3 /* Podfile */; };
 		D3D89C9520A4FE610011F7F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3D89C9420A4FE610011F7F3 /* GoogleService-Info.plist */; };
+		D3D89C9B20A633280011F7F3 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D89C9A20A633280011F7F3 /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,6 @@
 		D3D471EC20A4D969002567DB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D3D471EE20A4D969002567DB /* Decoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
 		D3D471EF20A4D969002567DB /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
-		D3D471F120A4D969002567DB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3D471F220A4D969002567DB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D471F420A4D969002567DB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D3D471F620A4D969002567DB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		D3D471FB20A4D969002567DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D89C9220A4FCB60011F7F3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D3D89C9420A4FE610011F7F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3D89C9A20A633280011F7F3 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,7 @@
 		D3D471F020A4D969002567DB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D3D471F120A4D969002567DB /* ViewController.swift */,
+				D3D89C9A20A633280011F7F3 /* VideoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -379,8 +379,8 @@
 			files = (
 				D3D471FF20A4D969002567DB /* Storyboard.swift in Sources */,
 				D3D4720B20A4D969002567DB /* Formatters.swift in Sources */,
+				D3D89C9B20A633280011F7F3 /* VideoViewController.swift in Sources */,
 				D3D4720D20A4D969002567DB /* AppDelegate.swift in Sources */,
-				D3D4720C20A4D969002567DB /* ViewController.swift in Sources */,
 				D3D4720A20A4D969002567DB /* Decoders.swift in Sources */,
 				D3D4721020A4D969002567DB /* Appearance.swift in Sources */,
 				D3D4720120A4D969002567DB /* Environment.swift in Sources */,

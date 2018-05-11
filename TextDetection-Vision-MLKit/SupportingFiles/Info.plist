@@ -42,5 +42,7 @@
 	</array>
 	<key>_Configuration</key>
 	<string>$(CONFIGURATION)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Capture Video for text recognition</string>
 </dict>
 </plist>
