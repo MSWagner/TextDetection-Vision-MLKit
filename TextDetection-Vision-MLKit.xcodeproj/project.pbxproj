@@ -8,49 +8,66 @@
 
 /* Begin PBXBuildFile section */
 		348EB7256AC2B29FD058AF39 /* Pods_TextDetection_Vision_MLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6425309115497D311A920F /* Pods_TextDetection_Vision_MLKit.framework */; };
+		D3C7E53D20ACEC0D00CD1377 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E53C20ACEC0D00CD1377 /* DetailViewController.swift */; };
+		D3C7E54020AF3B2300CD1377 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E53F20AF3B2200CD1377 /* TrackingViewController.swift */; };
+		D3C7E54220AF3F3F00CD1377 /* UIImage+PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E54120AF3F3F00CD1377 /* UIImage+PixelBuffer.swift */; };
+		D3C7E54420AF5E2B00CD1377 /* CMSampleBuffer+toImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E54320AF5E2B00CD1377 /* CMSampleBuffer+toImage.swift */; };
+		D3C7E56320AF800E00CD1377 /* UIImage+FixOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E56220AF800E00CD1377 /* UIImage+FixOrientation.swift */; };
+		D3C7E56520AF815100CD1377 /* CGRect+AVtoUIKitConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E56420AF815100CD1377 /* CGRect+AVtoUIKitConversion.swift */; };
+		D3C7E56720AF834900CD1377 /* CGRect+ResizeTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E56620AF834900CD1377 /* CGRect+ResizeTo.swift */; };
 		D3D471FD20A4D969002567DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D471D920A4D969002567DB /* LaunchScreen.storyboard */; };
 		D3D471FE20A4D969002567DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D471DB20A4D969002567DB /* Main.storyboard */; };
 		D3D471FF20A4D969002567DB /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471DD20A4D969002567DB /* Storyboard.swift */; };
-		D3D4720020A4D969002567DB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D3D471DF20A4D969002567DB /* .gitkeep */; };
 		D3D4720120A4D969002567DB /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471E020A4D969002567DB /* Environment.swift */; };
 		D3D4720720A4D969002567DB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471E820A4D969002567DB /* Config.swift */; };
-		D3D4720920A4D969002567DB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D3D471EC20A4D969002567DB /* .gitkeep */; };
 		D3D4720A20A4D969002567DB /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471EE20A4D969002567DB /* Decoders.swift */; };
 		D3D4720B20A4D969002567DB /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471EF20A4D969002567DB /* Formatters.swift */; };
 		D3D4720D20A4D969002567DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471F220A4D969002567DB /* AppDelegate.swift */; };
-		D3D4720E20A4D969002567DB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D3D471F420A4D969002567DB /* .gitkeep */; };
-		D3D4720F20A4D969002567DB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D3D471F620A4D969002567DB /* .gitkeep */; };
 		D3D4721020A4D969002567DB /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D471F720A4D969002567DB /* Appearance.swift */; };
 		D3D4721120A4D969002567DB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3D471F920A4D969002567DB /* Info.plist */; };
 		D3D4721220A4D969002567DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D471FB20A4D969002567DB /* Assets.xcassets */; };
 		D3D89C9320A4FCB60011F7F3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D3D89C9220A4FCB60011F7F3 /* Podfile */; };
 		D3D89C9520A4FE610011F7F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3D89C9420A4FE610011F7F3 /* GoogleService-Info.plist */; };
-		D3D89C9B20A633280011F7F3 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D89C9A20A633280011F7F3 /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3C7E56120AF6DB500CD1377 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6D4898EA7B613924C1FCAE1A /* Pods-TextDetection-Vision-MLKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextDetection-Vision-MLKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit.release.xcconfig"; sourceTree = "<group>"; };
 		6F47D951F99E155FEF8AEF49 /* Pods-TextDetection-Vision-MLKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextDetection-Vision-MLKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit.debug.xcconfig"; sourceTree = "<group>"; };
 		CE6425309115497D311A920F /* Pods_TextDetection_Vision_MLKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextDetection_Vision_MLKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C7E53C20ACEC0D00CD1377 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D3C7E53F20AF3B2200CD1377 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		D3C7E54120AF3F3F00CD1377 /* UIImage+PixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PixelBuffer.swift"; sourceTree = "<group>"; };
+		D3C7E54320AF5E2B00CD1377 /* CMSampleBuffer+toImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer+toImage.swift"; sourceTree = "<group>"; };
+		D3C7E56220AF800E00CD1377 /* UIImage+FixOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FixOrientation.swift"; sourceTree = "<group>"; };
+		D3C7E56420AF815100CD1377 /* CGRect+AVtoUIKitConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+AVtoUIKitConversion.swift"; sourceTree = "<group>"; };
+		D3C7E56620AF834900CD1377 /* CGRect+ResizeTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+ResizeTo.swift"; sourceTree = "<group>"; };
 		D3D471BF20A4D8AE002567DB /* TextDetection-Vision-MLKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TextDetection-Vision-MLKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D471DA20A4D969002567DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3D471DC20A4D969002567DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3D471DD20A4D969002567DB /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
-		D3D471DF20A4D969002567DB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D3D471E020A4D969002567DB /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D3D471E820A4D969002567DB /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		D3D471EC20A4D969002567DB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D3D471EE20A4D969002567DB /* Decoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
 		D3D471EF20A4D969002567DB /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		D3D471F220A4D969002567DB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3D471F420A4D969002567DB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		D3D471F620A4D969002567DB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D3D471F720A4D969002567DB /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		D3D471F920A4D969002567DB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D471FB20A4D969002567DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D89C9220A4FCB60011F7F3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D3D89C9420A4FE610011F7F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D3D89C9A20A633280011F7F3 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +137,6 @@
 				D3D471F720A4D969002567DB /* Appearance.swift */,
 				D3D471D820A4D969002567DB /* Storyboards */,
 				D3D471F020A4D969002567DB /* ViewControllers */,
-				D3D471DE20A4D969002567DB /* ViewModels */,
-				D3D471F520A4D969002567DB /* Views */,
-				D3D471E920A4D969002567DB /* Models */,
-				D3D471F320A4D969002567DB /* Controllers */,
-				D3D471E120A4D969002567DB /* Networking */,
 				D3D471EB20A4D969002567DB /* Extensions */,
 				D3D471ED20A4D969002567DB /* Utilities */,
 			);
@@ -141,32 +153,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		D3D471DE20A4D969002567DB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				D3D471DF20A4D969002567DB /* .gitkeep */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		D3D471E120A4D969002567DB /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		D3D471E920A4D969002567DB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		D3D471EB20A4D969002567DB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D3D471EC20A4D969002567DB /* .gitkeep */,
+				D3C7E54120AF3F3F00CD1377 /* UIImage+PixelBuffer.swift */,
+				D3C7E54320AF5E2B00CD1377 /* CMSampleBuffer+toImage.swift */,
+				D3C7E56220AF800E00CD1377 /* UIImage+FixOrientation.swift */,
+				D3C7E56420AF815100CD1377 /* CGRect+AVtoUIKitConversion.swift */,
+				D3C7E56620AF834900CD1377 /* CGRect+ResizeTo.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,25 +177,10 @@
 		D3D471F020A4D969002567DB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D3D89C9A20A633280011F7F3 /* VideoViewController.swift */,
+				D3C7E53F20AF3B2200CD1377 /* TrackingViewController.swift */,
+				D3C7E53C20ACEC0D00CD1377 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		D3D471F320A4D969002567DB /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				D3D471F420A4D969002567DB /* .gitkeep */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		D3D471F520A4D969002567DB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D3D471F620A4D969002567DB /* .gitkeep */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		D3D471F820A4D969002567DB /* SupportingFiles */ = {
@@ -234,6 +213,7 @@
 				D3D471BD20A4D8AE002567DB /* Resources */,
 				BCAE9D75FAFD2B8820C7ACB3 /* [CP] Embed Pods Frameworks */,
 				03D901F001D01F280DB79A4B /* [CP] Copy Pods Resources */,
+				D3C7E56120AF6DB500CD1377 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,15 +262,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3D4720F20A4D969002567DB /* .gitkeep in Resources */,
-				D3D4720920A4D969002567DB /* .gitkeep in Resources */,
 				D3D4721220A4D969002567DB /* Assets.xcassets in Resources */,
 				D3D471FE20A4D969002567DB /* Main.storyboard in Resources */,
 				D3D471FD20A4D969002567DB /* LaunchScreen.storyboard in Resources */,
 				D3D4721120A4D969002567DB /* Info.plist in Resources */,
 				D3D89C9320A4FCB60011F7F3 /* Podfile in Resources */,
-				D3D4720E20A4D969002567DB /* .gitkeep in Resources */,
-				D3D4720020A4D969002567DB /* .gitkeep in Resources */,
 				D3D89C9520A4FE610011F7F3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +318,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Diff/Diff.framework",
+				"${BUILT_PRODUCTS_DIR}/GDPerformanceView-Swift/GDPerformanceView_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -355,6 +332,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Diff.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDPerformanceView_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -377,12 +355,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C7E53D20ACEC0D00CD1377 /* DetailViewController.swift in Sources */,
 				D3D471FF20A4D969002567DB /* Storyboard.swift in Sources */,
+				D3C7E54220AF3F3F00CD1377 /* UIImage+PixelBuffer.swift in Sources */,
 				D3D4720B20A4D969002567DB /* Formatters.swift in Sources */,
-				D3D89C9B20A633280011F7F3 /* VideoViewController.swift in Sources */,
 				D3D4720D20A4D969002567DB /* AppDelegate.swift in Sources */,
+				D3C7E56520AF815100CD1377 /* CGRect+AVtoUIKitConversion.swift in Sources */,
 				D3D4720A20A4D969002567DB /* Decoders.swift in Sources */,
 				D3D4721020A4D969002567DB /* Appearance.swift in Sources */,
+				D3C7E56320AF800E00CD1377 /* UIImage+FixOrientation.swift in Sources */,
+				D3C7E56720AF834900CD1377 /* CGRect+ResizeTo.swift in Sources */,
+				D3C7E54420AF5E2B00CD1377 /* CMSampleBuffer+toImage.swift in Sources */,
+				D3C7E54020AF3B2300CD1377 /* TrackingViewController.swift in Sources */,
 				D3D4720120A4D969002567DB /* Environment.swift in Sources */,
 				D3D4720720A4D969002567DB /* Config.swift in Sources */,
 			);
@@ -528,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F47D951F99E155FEF8AEF49 /* Pods-TextDetection-Vision-MLKit.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3TBY9W4TM;
@@ -547,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D4898EA7B613924C1FCAE1A /* Pods-TextDetection-Vision-MLKit.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3TBY9W4TM;
