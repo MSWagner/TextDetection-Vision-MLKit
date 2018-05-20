@@ -22,7 +22,8 @@ class TrackingViewController: UIViewController {
     
     @IBOutlet weak var visionSwitch: UISwitch!
     @IBOutlet weak var mlKitSwitch: UISwitch!
-
+    @IBOutlet weak var drawingSwitch: UISwitch!
+    
     // MARK: - Performance Properties
 
     var performanceView = GDPerformanceMonitor.init()
@@ -31,6 +32,7 @@ class TrackingViewController: UIViewController {
 
     private var isVisionOn: Bool = false
     private var isMLKitOn: Bool = false
+    private var shouldDrawRects: Bool = true
 
     // MARK: - AVSession
 
@@ -65,6 +67,7 @@ class TrackingViewController: UIViewController {
 
         performanceView.startMonitoring()
 
+        shouldDrawRects = drawingSwitch.isOn
         isVisionOn = visionSwitch.isOn
         isMLKitOn = mlKitSwitch.isOn
         session.startRunning()
@@ -152,6 +155,15 @@ class TrackingViewController: UIViewController {
         }
     }
 
+    @IBAction func onDrawingSwitch(_ sender: Any) {
+        shouldDrawRects = drawingSwitch.isOn
+
+        if !shouldDrawRects {
+            imageView.layer.sublayers?.removeSubrange(2...)
+            removeFrames()
+        }
+    }
+
     // MARK: - Vision
 
     private func visionRequestHandler(request: VNRequest, error: Error?) {
@@ -161,8 +173,11 @@ class TrackingViewController: UIViewController {
 
         DispatchQueue.main.async {
             self.imageView.layer.sublayers?.removeSubrange(2...)
+
             if !self.isVisionOn { return }
             self.visionButton.title = "Vision: \(textObservations.count)"
+
+            if !self.shouldDrawRects { return }
             textObservations.forEach { self.highlightVisionWord(box: $0) }
         }
     }
@@ -323,9 +338,11 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                     self.mlKitButton.title = features != nil ? "ML-Kit: \(features!.count)" : "ML-Kit: 0"
                 }
 
-                features?.forEach { mlKitText in
-                    print("MLText: \(mlKitText.text)")
-                    self.addFrameView(featureFrame: mlKitText.frame, imageSize: sampleBuffer.toUIImage()!.size, viewFrame: self.imageView.frame, text: mlKitText.text)
+                if self.shouldDrawRects {
+                    features?.forEach { mlKitText in
+                        print("MLText: \(mlKitText.text)")
+                        self.addFrameView(featureFrame: mlKitText.frame, imageSize: sampleBuffer.toUIImage()!.size, viewFrame: self.imageView.frame, text: mlKitText.text)
+                    }
                 }
             })
         }
