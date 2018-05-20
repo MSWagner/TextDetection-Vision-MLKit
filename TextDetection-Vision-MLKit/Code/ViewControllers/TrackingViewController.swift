@@ -195,8 +195,6 @@ class TrackingViewController: UIViewController {
                     textObservations.forEach { self.highlightVisionWord(box: $0) }
                 }
             }
-
-            self.isVisionRunning.value = false
         }
     }
 
@@ -325,10 +323,10 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: requestOptions)
 
             do {
+                defer { isVisionRunning.value = false }
                 try imageRequestHandler.perform(self.visionRequests)
             } catch {
                 print(error)
-                isVisionRunning.value = false
             }
         }
 
@@ -346,6 +344,7 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             isMLKitRunning.value = true
             mlTextDetector?.detect(in: mlImage, completion: { [weak self] features, error in
                 guard let `self` = self else { return }
+                defer { self.isMLKitRunning.value = false }
 
                 self.removeFrames()
 
@@ -368,8 +367,6 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                         }
                     }
                 }
-
-                self.isMLKitRunning.value = false
             })
         }
     }
