@@ -11,6 +11,7 @@ import AVFoundation
 import Vision
 import FirebaseMLVision
 import GDPerformanceView_Swift
+import ReactiveSwift
 
 class TrackingViewController: UIViewController {
 
@@ -30,8 +31,8 @@ class TrackingViewController: UIViewController {
 
     // MARK: - Switch Properties
 
-    private var isVisionOn: Bool = false
-    private var isMLKitOn: Bool = false
+    private var isVisionOn = MutableProperty<Bool>(false)
+    private var isMLKitOn = MutableProperty<Bool>(false)
     private var shouldDrawRects: Bool = true
 
     // MARK: - AVSession
@@ -45,11 +46,15 @@ class TrackingViewController: UIViewController {
     private var pixelBuffer: CMSampleBuffer?
     private var lastBoxRect: CGRect?
 
+    private var isVisionRunning = MutableProperty<Bool>(false)
+
     // MARK: - MLKit Properties
 
     lazy var mlVision = Vision.vision()
     private var mlTextDetector: VisionTextDetector?
     private var mlFrameSublayer = CALayer()
+
+    private var isMLKitRunning = MutableProperty<Bool>(false)
 
     // MARK: - Life Cycle
 
@@ -60,6 +65,13 @@ class TrackingViewController: UIViewController {
         setupVideo()
         setupVision()
         setupMLKit()
+
+        SignalProducer.combineLatest(isVisionRunning.producer, isVisionOn.producer, isMLKitRunning.producer, isMLKitOn.producer)
+            .startWithValues { (isVisionRunning, isVisionOn, isMLKitRunning, isMLKitOn) in
+                if (!isMLKitRunning || !isMLKitOn) && (!isVisionRunning || !isVisionOn) {
+                    self.pixelBuffer = nil
+                }
+            }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -68,8 +80,8 @@ class TrackingViewController: UIViewController {
         performanceView.startMonitoring()
 
         shouldDrawRects = drawingSwitch.isOn
-        isVisionOn = visionSwitch.isOn
-        isMLKitOn = mlKitSwitch.isOn
+        isVisionOn.value = visionSwitch.isOn
+        isMLKitOn.value = mlKitSwitch.isOn
         session.startRunning()
     }
 
@@ -140,18 +152,20 @@ class TrackingViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func onMLKitSwitch(_ sender: Any) {
-        isMLKitOn = mlKitSwitch.isOn
-        if !isMLKitOn {
+        isMLKitOn.value = mlKitSwitch.isOn
+        if !isMLKitOn.value {
             removeFrames()
             mlKitButton.title = "ML-Kit: -"
+            isMLKitRunning.value = false
         }
     }
 
     @IBAction func onVisionSwitch(_ sender: Any) {
-        isVisionOn = visionSwitch.isOn
-        if !isVisionOn {
+        isVisionOn.value = visionSwitch.isOn
+        if !isVisionOn.value {
             imageView.layer.sublayers?.removeSubrange(2...)
             visionButton.title = "Vision: -"
+            isVisionRunning.value = false
         }
     }
 
@@ -174,11 +188,15 @@ class TrackingViewController: UIViewController {
         DispatchQueue.main.async {
             self.imageView.layer.sublayers?.removeSubrange(2...)
 
-            if !self.isVisionOn { return }
-            self.visionButton.title = "Vision: \(textObservations.count)"
+            if self.isVisionOn.value {
+                self.visionButton.title = "Vision: \(textObservations.count)"
 
-            if !self.shouldDrawRects { return }
-            textObservations.forEach { self.highlightVisionWord(box: $0) }
+                if self.shouldDrawRects {
+                    textObservations.forEach { self.highlightVisionWord(box: $0) }
+                }
+            }
+
+            self.isVisionRunning.value = false
         }
     }
 
@@ -287,7 +305,7 @@ class TrackingViewController: UIViewController {
 extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+        guard pixelBuffer == nil, let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
 
@@ -295,7 +313,9 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         // MARK: - Vision Buffer Handling
 
-        if isVisionOn {
+        if isVisionOn.value {
+            isVisionRunning.value = true
+
             var requestOptions: [VNImageOption: Any] = [:]
 
             if let camData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {
@@ -308,12 +328,13 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 try imageRequestHandler.perform(self.visionRequests)
             } catch {
                 print(error)
+                isVisionRunning.value = false
             }
         }
 
         // MARK: - MLKit Buffer Handling
 
-        if isMLKitOn {
+        if isMLKitOn.value {
             mlTextDetector = mlVision.textDetector()
 
             let metadata = VisionImageMetadata()
@@ -322,28 +343,33 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             let mlImage = VisionImage(buffer: sampleBuffer)
             mlImage.metadata = metadata
 
+            isMLKitRunning.value = true
             mlTextDetector?.detect(in: mlImage, completion: { [weak self] features, error in
                 guard let `self` = self else { return }
 
                 self.removeFrames()
-                if !self.isMLKitOn { return }
 
                 if let error = error {
                     print(error.localizedDescription)
+                    self.isMLKitRunning.value = false
                     return
                 }
 
-                DispatchQueue.main.async {
-                    if !self.isMLKitOn { return }
-                    self.mlKitButton.title = features != nil ? "ML-Kit: \(features!.count)" : "ML-Kit: 0"
-                }
+                if self.isMLKitOn.value {
+                    DispatchQueue.main.async {
+                        if !self.isMLKitOn.value { return }
+                        self.mlKitButton.title = features != nil ? "ML-Kit: \(features!.count)" : "ML-Kit: 0"
+                    }
 
-                if self.shouldDrawRects {
-                    features?.forEach { mlKitText in
-                        print("MLText: \(mlKitText.text)")
-                        self.addFrameView(featureFrame: mlKitText.frame, imageSize: sampleBuffer.toUIImage()!.size, viewFrame: self.imageView.frame, text: mlKitText.text)
+                    if self.shouldDrawRects {
+                        features?.forEach { mlKitText in
+                            print("MLText: \(mlKitText.text)")
+                            self.addFrameView(featureFrame: mlKitText.frame, imageSize: sampleBuffer.toUIImage()!.size, viewFrame: self.imageView.frame, text: mlKitText.text)
+                        }
                     }
                 }
+
+                self.isMLKitRunning.value = false
             })
         }
     }
