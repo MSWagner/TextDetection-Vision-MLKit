@@ -50,10 +50,7 @@ class TrackingViewController: UIViewController {
 
     // MARK: - MLKit Properties
 
-    lazy var mlVision = Vision.vision()
-    private var mlTextDetector: VisionTextDetector?
     private var mlFrameSublayer = CALayer()
-
     private var isMLKitRunning = MutableProperty<Bool>(false)
 
     // MARK: - Life Cycle
@@ -146,7 +143,6 @@ class TrackingViewController: UIViewController {
 
     private func setupMLKit() {
         imageView.layer.addSublayer(mlFrameSublayer)
-        mlTextDetector = mlVision.textDetector()
     }
 
     // MARK: - IBActions
@@ -226,12 +222,12 @@ class TrackingViewController: UIViewController {
         let viewSize = viewFrame.size
 
         // Find resolution for the view and image
-        let rView = viewSize.width / viewSize.height
-        let rImage = imageSize.width / imageSize.height
+        let viewResolution = viewSize.width / viewSize.height
+        let imageResolution = imageSize.width / imageSize.height
 
         // Define scale based on comparing resolutions
         var scale: CGFloat
-        if rView > rImage {
+        if viewResolution > imageResolution {
             scale = viewSize.height / imageSize.height
         } else {
             scale = viewSize.width / imageSize.width
@@ -333,16 +329,9 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         // MARK: - MLKit Buffer Handling
 
         if isMLKitOn.value {
-            mlTextDetector = mlVision.textDetector()
-
-            let metadata = VisionImageMetadata()
-            metadata.orientation = .rightTop
-
-            let mlImage = VisionImage(buffer: sampleBuffer)
-            mlImage.metadata = metadata
 
             isMLKitRunning.value = true
-            mlTextDetector?.detect(in: mlImage, completion: { [weak self] features, error in
+            MLKitController.shared.detectTextIn(sampleBuffer) { [weak self] features, error in
                 guard let `self` = self else { return }
                 defer { self.isMLKitRunning.value = false }
 
@@ -360,14 +349,17 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                         self.mlKitButton.title = features != nil ? "ML-Kit: \(features!.count)" : "ML-Kit: 0"
                     }
 
-                    if self.shouldDrawRects {
-                        features?.forEach { mlKitText in
-                            print("MLText: \(mlKitText.text)")
-                            self.addFrameView(featureFrame: mlKitText.frame, imageSize: sampleBuffer.toUIImage()!.size, viewFrame: self.imageView.frame, text: mlKitText.text)
+                    if self.shouldDrawRects, let features = features {
+
+                        features.forEach { mlKitText in
+                            self.addFrameView(featureFrame: mlKitText.frame,
+                                              imageSize: sampleBuffer.toUIImage()!.size,
+                                              viewFrame: self.imageView.frame,
+                                              text: mlKitText.text)
                         }
                     }
                 }
-            })
+            }
         }
     }
 }
