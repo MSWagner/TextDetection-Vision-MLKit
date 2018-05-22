@@ -14,5 +14,6 @@ target 'TextDetection-Vision-MLKit' do
     pod 'Firebase/MLVision'
     pod 'Firebase/MLVisionTextModel'
     pod 'GDPerformanceView-Swift', '~> 1.3.2'
+    pod 'PKHUD', '~> 5.0'
     
 end

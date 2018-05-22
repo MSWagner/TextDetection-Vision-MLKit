@@ -12,6 +12,7 @@ import Vision
 import FirebaseMLVision
 import GDPerformanceView_Swift
 import ReactiveSwift
+import PKHUD
 
 class TrackingViewController: UIViewController {
 
@@ -20,10 +21,12 @@ class TrackingViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var visionButton: UIBarButtonItem!
     @IBOutlet weak var mlKitButton: UIBarButtonItem!
+    @IBOutlet weak var collectedVisionFrameButton: UIBarButtonItem!
     
     @IBOutlet weak var visionSwitch: UISwitch!
     @IBOutlet weak var mlKitSwitch: UISwitch!
     @IBOutlet weak var drawingSwitch: UISwitch!
+    @IBOutlet weak var collectionSwitch: UISwitch!
     
     // MARK: - Performance Properties
 
@@ -44,9 +47,13 @@ class TrackingViewController: UIViewController {
 
     private var visionRequests = [VNRequest]()
     private var pixelBuffer: CMSampleBuffer?
+
     private var lastBoxRect: CGRect?
+    private var lastImage: UIImage?
 
     private var isVisionRunning = MutableProperty<Bool>(false)
+
+    private var visionResults = MutableProperty<[VisionResult]>([])
 
     // MARK: - MLKit Properties
 
@@ -59,20 +66,25 @@ class TrackingViewController: UIViewController {
         super.viewDidLoad()
 
         setupPerformanceView()
+        setupCollection()
         setupVideo()
         setupVision()
         setupMLKit()
 
         SignalProducer.combineLatest(isVisionRunning.producer, isVisionOn.producer, isMLKitRunning.producer, isMLKitOn.producer)
-            .startWithValues { (isVisionRunning, isVisionOn, isMLKitRunning, isMLKitOn) in
+            .startWithValues { [weak self] (isVisionRunning, isVisionOn, isMLKitRunning, isMLKitOn) in
                 if (!isMLKitRunning || !isMLKitOn) && (!isVisionRunning || !isVisionOn) {
-                    self.pixelBuffer = nil
+                    self?.lastImage = nil
+                    self?.pixelBuffer = nil
                 }
             }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        visionResults.value = []
+        lastImage = nil
+        pixelBuffer = nil
 
         performanceView.startMonitoring()
 
@@ -102,6 +114,11 @@ class TrackingViewController: UIViewController {
 
             detailViewController.boxRect = lastBoxRect
             detailViewController.image = image
+        }
+
+        if let visionResultListVC = segue.destination as? VisionResultListViewController {
+            HUD.show(.label("MLKit running, please wait..."))
+            visionResultListVC.viewModel = VisionResultListViewModel(visionResults: visionResults.value)
         }
     }
 
@@ -143,6 +160,12 @@ class TrackingViewController: UIViewController {
 
     private func setupMLKit() {
         imageView.layer.addSublayer(mlFrameSublayer)
+    }
+
+    private func setupCollection() {
+        visionResults.producer.startWithValues { [weak self] visionResults in
+            self?.collectedVisionFrameButton.title = "Collected Frames: \(visionResults.count)"
+        }
     }
 
     // MARK: - IBActions
@@ -205,6 +228,22 @@ class TrackingViewController: UIViewController {
         boxOutline.borderWidth = 2.0
         boxOutline.borderColor = UIColor.blue.cgColor
         imageView.layer.addSublayer(boxOutline)
+
+        if collectionSwitch.isOn {
+            guard let lastImage = lastImage, let lastRect = lastBoxRect else { return }
+            addVisionResultWith(lastImage, lastRect: lastRect)
+        }
+    }
+
+    private func addVisionResultWith(_ lastImage: UIImage, lastRect: CGRect) {
+
+        let imageBox = lastRect.convertFromAVtoUIKit().resizeTo(lastImage)
+        let croppedImage = lastImage.cgImage?.cropping(to: imageBox)
+
+        let visionResult = VisionResult(image: UIImage(cgImage: croppedImage!))
+        var newVisionResults = visionResults.value
+        newVisionResults.append(visionResult)
+        visionResults.value = newVisionResults
     }
 
     // MARK: - ML Kit
@@ -304,6 +343,7 @@ extension TrackingViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
 
         self.pixelBuffer = sampleBuffer
+        self.lastImage = sampleBuffer.toUIImage()?.fixOrientation()
 
         // MARK: - Vision Buffer Handling
 

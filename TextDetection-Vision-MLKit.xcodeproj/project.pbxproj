@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		348EB7256AC2B29FD058AF39 /* Pods_TextDetection_Vision_MLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6425309115497D311A920F /* Pods_TextDetection_Vision_MLKit.framework */; };
+		D35EC8B820B4AAC10059A94D /* VisionResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EC8B720B4AAC10059A94D /* VisionResultListViewController.swift */; };
+		D35EC8BB20B4AB610059A94D /* VisionResultListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EC8BA20B4AB610059A94D /* VisionResultListViewModel.swift */; };
+		D35EC8BF20B4ABA50059A94D /* VisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EC8BE20B4ABA50059A94D /* VisionResult.swift */; };
+		D35EC8C120B4AC180059A94D /* VisionResultOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EC8C020B4AC180059A94D /* VisionResultOverviewCell.swift */; };
+		D35EC8C320B4AC250059A94D /* VisionResultOverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35EC8C220B4AC250059A94D /* VisionResultOverviewCell.xib */; };
+		D35EC8C520B4AD810059A94D /* VisionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EC8C420B4AD810059A94D /* VisionResultViewModel.swift */; };
 		D369068720B36778006D78D1 /* MLKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D369068620B36778006D78D1 /* MLKitController.swift */; };
 		D3C7E53D20ACEC0D00CD1377 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E53C20ACEC0D00CD1377 /* DetailViewController.swift */; };
 		D3C7E54020AF3B2300CD1377 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7E53F20AF3B2200CD1377 /* TrackingViewController.swift */; };
@@ -47,6 +53,12 @@
 		6D4898EA7B613924C1FCAE1A /* Pods-TextDetection-Vision-MLKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextDetection-Vision-MLKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit.release.xcconfig"; sourceTree = "<group>"; };
 		6F47D951F99E155FEF8AEF49 /* Pods-TextDetection-Vision-MLKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextDetection-Vision-MLKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextDetection-Vision-MLKit/Pods-TextDetection-Vision-MLKit.debug.xcconfig"; sourceTree = "<group>"; };
 		CE6425309115497D311A920F /* Pods_TextDetection_Vision_MLKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextDetection_Vision_MLKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D35EC8B720B4AAC10059A94D /* VisionResultListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionResultListViewController.swift; sourceTree = "<group>"; };
+		D35EC8BA20B4AB610059A94D /* VisionResultListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionResultListViewModel.swift; sourceTree = "<group>"; };
+		D35EC8BE20B4ABA50059A94D /* VisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionResult.swift; sourceTree = "<group>"; };
+		D35EC8C020B4AC180059A94D /* VisionResultOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionResultOverviewCell.swift; sourceTree = "<group>"; };
+		D35EC8C220B4AC250059A94D /* VisionResultOverviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisionResultOverviewCell.xib; sourceTree = "<group>"; };
+		D35EC8C420B4AD810059A94D /* VisionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionResultViewModel.swift; sourceTree = "<group>"; };
 		D369068620B36778006D78D1 /* MLKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitController.swift; sourceTree = "<group>"; };
 		D3C7E53C20ACEC0D00CD1377 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D3C7E53F20AF3B2200CD1377 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +112,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D35EC8B920B4AB440059A94D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D35EC8BA20B4AB610059A94D /* VisionResultListViewModel.swift */,
+				D35EC8C420B4AD810059A94D /* VisionResultViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D35EC8BC20B4AB7D0059A94D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D35EC8C020B4AC180059A94D /* VisionResultOverviewCell.swift */,
+				D35EC8C220B4AC250059A94D /* VisionResultOverviewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D35EC8BD20B4AB850059A94D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D35EC8BE20B4ABA50059A94D /* VisionResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D369068520B36763006D78D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +184,9 @@
 				D3D471F720A4D969002567DB /* Appearance.swift */,
 				D3D471D820A4D969002567DB /* Storyboards */,
 				D3D471F020A4D969002567DB /* ViewControllers */,
+				D35EC8B920B4AB440059A94D /* ViewModels */,
+				D35EC8BC20B4AB7D0059A94D /* Views */,
+				D35EC8BD20B4AB850059A94D /* Models */,
 				D369068520B36763006D78D1 /* Controller */,
 				D3D471EB20A4D969002567DB /* Extensions */,
 				D3D471ED20A4D969002567DB /* Utilities */,
@@ -189,6 +230,7 @@
 			children = (
 				D3C7E53F20AF3B2200CD1377 /* TrackingViewController.swift */,
 				D3C7E53C20ACEC0D00CD1377 /* DetailViewController.swift */,
+				D35EC8B720B4AAC10059A94D /* VisionResultListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +319,7 @@
 				D3D471FD20A4D969002567DB /* LaunchScreen.storyboard in Resources */,
 				D3D89C9320A4FCB60011F7F3 /* Podfile in Resources */,
 				D3D89C9520A4FE610011F7F3 /* GoogleService-Info.plist in Resources */,
+				D35EC8C320B4AC250059A94D /* VisionResultOverviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +375,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBDataSource/MBDataSource.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
@@ -346,6 +390,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBDataSource.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
@@ -365,10 +410,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C7E53D20ACEC0D00CD1377 /* DetailViewController.swift in Sources */,
+				D35EC8C520B4AD810059A94D /* VisionResultViewModel.swift in Sources */,
+				D35EC8B820B4AAC10059A94D /* VisionResultListViewController.swift in Sources */,
 				D3D471FF20A4D969002567DB /* Storyboard.swift in Sources */,
 				D3C7E54220AF3F3F00CD1377 /* UIImage+PixelBuffer.swift in Sources */,
 				D3D4720B20A4D969002567DB /* Formatters.swift in Sources */,
 				D3D4720D20A4D969002567DB /* AppDelegate.swift in Sources */,
+				D35EC8BF20B4ABA50059A94D /* VisionResult.swift in Sources */,
+				D35EC8C120B4AC180059A94D /* VisionResultOverviewCell.swift in Sources */,
 				D3C7E56520AF815100CD1377 /* CGRect+AVtoUIKitConversion.swift in Sources */,
 				D3D4720A20A4D969002567DB /* Decoders.swift in Sources */,
 				D3D4721020A4D969002567DB /* Appearance.swift in Sources */,
@@ -378,6 +427,7 @@
 				D3C7E54020AF3B2300CD1377 /* TrackingViewController.swift in Sources */,
 				D3D4720120A4D969002567DB /* Environment.swift in Sources */,
 				D3D4720720A4D969002567DB /* Config.swift in Sources */,
+				D35EC8BB20B4AB610059A94D /* VisionResultListViewModel.swift in Sources */,
 				D369068720B36778006D78D1 /* MLKitController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
