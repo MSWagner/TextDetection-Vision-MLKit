@@ -1,4 +1,5 @@
 # TextDetection-Vision-MLKit
+Test text detection with Vision and ORC with MLKit Firebase. Have a look at the performance and accuracy.
 
 ## Prerequisites
 - Xcode: 9.3
